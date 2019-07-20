@@ -11,7 +11,7 @@ let responses;
 fs.readFile('./responses.txt', "utf8", function(err, data) { // Allows custom responses
 	if(err) {
 		console.log("Can't read or find responses.txt, setting defaults");
-		responses = ["``jvenberg@gmail.com:mjkr5674``" "count.luca1@gmail.com:science4", "jeff.jitb@gmail.com:bowser12", "dftbaman@gmail.com:Daniel02", "leecollege16@gmail.com:smitty16",
+		responses = ["jvenberg@gmail.com:mjkr5674", "jeff.jitb@gmail.com:bowser12", "dftbaman@gmail.com:Daniel02", "leecollege16@gmail.com:smitty16",
 					"dapperbantam@gmail.com:C4tz0Mb13", "kimgatwood@yahoo.com:baby2544", "kenzieackley@yahoo.com:shelby32", "kcooper.14@hotmail.com:11.28.97", "k.o-the-gamer@hotmail.com:31ko32ko",
 					"m3dium.v@gmail.com:otacno23", "sooosans@hotmail.com:pudding22", "gman007@yandex.ru:gaben1337"];
 	} else {
