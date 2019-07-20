@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const clockEmoji = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛", "🕜", "🕝", "🕞", "🕟", "🕠", "🕡", "🕢", "🕣", "🕤", "🕥", "🕦", "🕧"];
 
-const re = /^(\>\s?r+o+ll+|\>\s?s+h+a+k+e+)(?:\s(.+))?/gim; // Regex to find out if a user types ">roll"
+const re = /^(\>\s?m+i+ne+c+r+a+f+t+|\>\s?s+h+a+k+e+)(?:\s(.+))?/gim; // Regex to find out if a user types ">roll"
 let responses;
 fs.readFile('./responses.txt', "utf8", function(err, data) { // Allows custom responses
 	if(err) {
@@ -22,7 +22,7 @@ fs.readFile('./responses.txt', "utf8", function(err, data) { // Allows custom re
 client.on('ready', () => {
   	console.log(`Logged in as ${client.user.tag}!`);
 	console.log("Available responses: " + responses.length);
-	client.user.setGame(">roll or >shake");
+	client.user.setGame(">minecraft");
 });
 
 client.on('message', msg => {
@@ -48,7 +48,7 @@ client.on('message', msg => {
 fs.readFile('./token.key', "utf8", function(err, data) { // Keep this in a seperate file, trust me
 	if(err) {
 		console.log("Can't read or find token.key, make a token.key file if you haven't already"); 
-		client.login('my token');
+		client.login('NjAxOTI2NjYyMzc2MTI4NTEy.XTJZ6w.xSeEdC-8MrMFE9uq5DG_3cHfWx8');
 	} else {
 		client.login(data);
 	}
