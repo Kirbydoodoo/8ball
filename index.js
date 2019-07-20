@@ -6,14 +6,14 @@ const fs = require("fs");
 
 const clockEmoji = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛", "🕜", "🕝", "🕞", "🕟", "🕠", "🕡", "🕢", "🕣", "🕤", "🕥", "🕦", "🕧"];
 
-const re = /^(\>\s?m+i+ne+c+r+a+f+t+|\>\s?s+h+a+k+e+)(?:\s(.+))?/gim; // Regex to find out if a user types ">roll"
+const re = /^(\>\s?r+o+ll+|\>\s?s+h+a+k+e+)(?:\s(.+))?/gim; // Regex to find out if a user types ">roll"
 let responses;
 fs.readFile('./responses.txt', "utf8", function(err, data) { // Allows custom responses
 	if(err) {
 		console.log("Can't read or find responses.txt, setting defaults");
-		responses = ["jvenberg@gmail.com:mjkr5674", "jeff.jitb@gmail.com:bowser12", "dftbaman@gmail.com:Daniel02", "leecollege16@gmail.com:smitty16",
-					"dapperbantam@gmail.com:C4tz0Mb13", "kimgatwood@yahoo.com:baby2544", "kenzieackley@yahoo.com:shelby32", "kcooper.14@hotmail.com:11.28.97", "k.o-the-gamer@hotmail.com:31ko32ko",
-					"m3dium.v@gmail.com:otacno23", "sooosans@hotmail.com:pudding22", "gman007@yandex.ru:gaben1337"];
+		responses = ["It is certain", "It is decidedly so", "Without a doubt", "Yes, definitely",
+					"You may rely on it", "As I see it, yes", "Most Likely", "Outlook good", "Yes",
+					"Signs point to yes", "Reply hazy try again", "Ask again later"];
 	} else {
 		responses = data.split("\n"); // Responses are each individual line
 	}
@@ -22,7 +22,7 @@ fs.readFile('./responses.txt', "utf8", function(err, data) { // Allows custom re
 client.on('ready', () => {
   	console.log(`Logged in as ${client.user.tag}!`);
 	console.log("Available responses: " + responses.length);
-	client.user.setGame(">minecraft");
+	client.user.setGame(">roll or >shake");
 });
 
 client.on('message', msg => {
@@ -48,7 +48,7 @@ client.on('message', msg => {
 fs.readFile('./token.key', "utf8", function(err, data) { // Keep this in a seperate file, trust me
 	if(err) {
 		console.log("Can't read or find token.key, make a token.key file if you haven't already"); 
-		client.login('NjAxOTI2NjYyMzc2MTI4NTEy.XTJZ6w.xSeEdC-8MrMFE9uq5DG_3cHfWx8');
+		client.login('my token');
 	} else {
 		client.login(data);
 	}
